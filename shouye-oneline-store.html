@@ -1,0 +1,2537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMFORT - 高品质电子产品商城</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f8f9fa;
+            --dark-color: #212529;
+            --accent-color: #ff5722;
+            --light-color: #e9ecef;
+            --mid-color: #6c757d;
+            --light-text: #adb5bd;
+            --white: #fff;
+            --header-bg: #f8f9fa;
+            --official-badge: #00a65a;
+            --star-color: #ff5722;
+            --discount-color: #ff0000;
+            --border-color: #ccc;
+            --text-light: #666;
+            --text-lighter: #999;
+            --text-color: #333;
+            --card-color: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --background-color: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: var(--dark-color);
+            background-color: var(--secondary-color);
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header/Navigation Styles */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-top {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .header-top-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .header-top-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .location-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: var(--mid-color);
+        }
+
+        .location-selector i {
+            color: var(--accent-color);
+        }
+
+        .header-nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-nav-link {
+            font-size: 14px;
+            color: var(--mid-color);
+        }
+
+        .header-nav-link:hover {
+            color: var(--accent-color);
+        }
+
+        .phone-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: var(--mid-color);
+        }
+
+        .header-bottom {
+            padding: 15px 0;
+        }
+
+        .header-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .catalog-btn {
+            background-color: var(--light-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: var(--light-color);
+            border-radius: 5px;
+            padding: 10px 20px;
+            flex: 1;
+            max-width: 600px;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: none;
+            padding: 5px;
+            width: 100%;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            background: none;
+            color: var(--mid-color);
+            font-size: 16px;
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-icon {
+            position: relative;
+            color: var(--mid-color);
+            font-size: 20px;
+        }
+
+        .header-icon:hover {
+            color: var(--accent-color);
+        }
+
+        .icon-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user-account {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .user-balance {
+            font-size: 12px;
+            color: var(--mid-color);
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 40px 0;
+        }
+
+        /* Banner */
+        .banner {
+            margin-bottom: 60px;
+        }
+
+        .banner-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 500px;
+            background-color: var(--light-color);
+        }
+
+        .banner-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 50%;
+            left: 60px;
+            transform: translateY(-50%);
+            max-width: 500px;
+        }
+
+        .banner-text h2 {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .banner-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--mid-color);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: #e64a19;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 36px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        /* Product Sections */
+        .product-section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .view-all {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .view-all i {
+            margin-left: 5px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .tag-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .product-tag {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .product-tag.new {
+            background-color: var(--primary-color);
+        }
+
+        .product-tag.sale {
+            background-color: var(--accent-color);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--light-text);
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        /* Enhanced product card for recommendations */
+        .enhanced-product-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .official-badge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            color: var(--white);
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        .enhanced-product-image {
+            width: 100%;
+            height: 180px;
+            position: relative;
+        }
+
+        .enhanced-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background-color: #fff;
+        }
+
+        .enhanced-product-info {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .enhanced-product-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 42px;
+        }
+
+        .shipping-note {
+            color: var(--mid-color);
+            font-size: 12px;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .price-container {
+            margin-top: auto;
+        }
+
+        .enhanced-product-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000;
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 5px;
+        }
+
+        .stars {
+            color: var(--star-color);
+            font-size: 14px;
+        }
+
+        .review-count {
+            color: var(--light-text);
+            font-size: 12px;
+        }
+
+        .add-to-cart {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px;
+            width: 100%;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #43a047;
+        }
+
+        /* Infinite scroll products */
+        .infinite-products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .load-more {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .load-more-btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .load-more-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-about h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .footer-link-column h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #f5f5f5;
+        }
+
+        .footer-link-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-link-column ul li a {
+            font-size: 14px;
+            color: #bbb;
+            transition: color 0.3s;
+        }
+
+        .footer-link-column ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-contact h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #f5f5f5;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+
+        .footer-qrcode {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer-qrcode img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 5px;
+        }
+
+        .footer-qrcode p {
+            font-size: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* My Page Styles */
+        .my-page {
+            display: none;
+            padding: 40px 0;
+        }
+
+        .my-page-header {
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-button {
+            background-color: var(--light-color);
+            color: var(--mid-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .profile-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--light-color);
+            overflow: hidden;
+            margin-right: 30px;
+        }
+
+        .profile-details h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        .profile-details p {
+            color: var(--light-text);
+            font-size: 16px;
+        }
+
+        .stats-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: var(--mid-color);
+            font-size: 14px;
+        }
+
+        .orders-card, .services-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .order-icons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .order-icon {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: var(--light-color);
+            transition: all 0.3s ease;
+        }
+
+        .order-icon:hover {
+            background-color: #e0e0e0;
+        }
+
+        .order-icon i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .order-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: var(--light-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            background-color: #e0e0e0;
+        }
+
+        .service-item i {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .service-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .btn-logout {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-weight: 500;
+            font-size: 16px;
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .btn-logout:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        /* Product Detail Page */
+        .product-detail {
+            display: none;
+            padding: 40px 0;
+        }
+
+        .product-detail-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .product-detail-back {
+            background-color: var(--light-color);
+            color: var(--mid-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .product-detail-back:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .product-detail-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .product-detail-share {
+            color: var(--mid-color);
+            font-size: 20px;
+        }
+
+        .product-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .product-detail-gallery {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-detail-main-image {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--light-color);
+        }
+
+        .product-detail-main-image img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .product-detail-thumbnails {
+            display: flex;
+            padding: 15px;
+            gap: 10px;
+            overflow-x: auto;
+        }
+
+        .product-thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid var(--light-color);
+            cursor: pointer;
+        }
+
+        .product-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-thumbnail.active {
+            border-color: var(--primary-color);
+        }
+
+        .product-detail-info {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-detail-name {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .product-detail-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-detail-stars {
+            color: var(--star-color);
+            font-size: 16px;
+        }
+
+        .product-detail-reviews {
+            color: var(--mid-color);
+            font-size: 14px;
+        }
+
+        .product-detail-price-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .product-detail-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .product-detail-original-price {
+            font-size: 20px;
+            color: var(--light-text);
+            text-decoration: line-through;
+        }
+
+        .product-detail-discount {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--discount-color);
+        }
+
+        .product-detail-availability {
+            font-size: 14px;
+            color: var(--official-badge);
+            margin-bottom: 25px;
+        }
+
+        .product-detail-description {
+            color: var(--mid-color);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .product-detail-colors {
+            margin-bottom: 25px;
+        }
+
+        .colors-label {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .colors-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .color-option.active {
+            border-color: var(--primary-color);
+        }
+
+        .color-black {
+            background-color: #000;
+        }
+
+        .color-white {
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .color-gray {
+            background-color: #888;
+        }
+
+        .color-blue {
+            background-color: #007bff;
+        }
+
+        .product-detail-quantity {
+            margin-bottom: 25px;
+        }
+
+        .quantity-label {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            width: fit-content;
+            border: 1px solid var(--light-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--mid-color);
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .product-detail-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-add-to-cart {
+            flex: 1;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 0;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #0069d9;
+        }
+
+        .btn-buy-now {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 0;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-buy-now:hover {
+            background-color: #e64a19;
+        }
+
+        .product-detail-features {
+            margin-bottom: 25px;
+        }
+
+        .features-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .features-list {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .features-list li {
+            color: var(--mid-color);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .product-detail-tabs {
+            margin-top: 60px;
+        }
+
+        .tabs-header {
+            display: flex;
+            border-bottom: 1px solid var(--light-color);
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            padding: 15px 25px;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--mid-color);
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .specifications-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specifications-table tr {
+            border-bottom: 1px solid var(--light-color);
+        }
+
+        .specifications-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .specifications-table th {
+            width: 30%;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--dark-color);
+            background-color: var(--secondary-color);
+        }
+
+        .specifications-table td {
+            padding: 15px 10px;
+            color: var(--mid-color);
+        }
+
+        .review-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--light-color);
+        }
+
+        .review-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .reviewer-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .review-date {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        .review-stars {
+            color: var(--star-color);
+        }
+
+        .review-content {
+            color: var(--mid-color);
+            line-height: 1.6;
+        }
+
+        .recommended-products {
+            margin-top: 60px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .product-grid, .infinite-products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .product-detail-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .header-nav-links {
+                display: none;
+            }
+            
+            .banner-text h2 {
+                font-size: 36px;
+            }
+            
+            .banner-text p {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .header-top-right {
+                display: none;
+            }
+            
+            .catalog-btn span {
+                display: none;
+            }
+            
+            .product-grid, .infinite-products {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid, .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .banner-image {
+                height: 350px;
+            }
+            
+            .banner-text {
+                left: 30px;
+            }
+
+            .product-detail-actions {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-icons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-avatar {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .product-detail-name {
+                font-size: 24px;
+            }
+
+            .product-detail-price {
+                font-size: 26px;
+            }
+        }
+
+        /* 添加爱心图标样式 */
+        .product-favorite {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        
+        .product-favorite:hover {
+            background-color: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+        
+        .product-favorite.active i {
+            color: #f44336;
+        }
+        
+        .product-favorite i {
+            font-size: 16px;
+            color: #757575;
+            transition: color 0.2s;
+        }
+        
+        /* 详情页面爱心图标 */
+        .product-detail-favorite {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 15px;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            transition: all 0.3s;
+        }
+        
+        .product-detail-favorite.active {
+            color: #f44336;
+            background-color: rgba(244, 67, 54, 0.1);
+            border-color: #f44336;
+        }
+        
+        .product-detail-favorite i {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with redesigned navigation based on the image -->
+    <header>
+        <!-- Header Top Section -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="logo">
+                        COMFO<span>R</span>T
+                    </div>
+                    <div class="header-top-right">
+                        <div class="location-selector">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Dnepropetrovk, Ukraine</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="header-nav-links">
+                            <a href="#" class="header-nav-link">HOT🔥</a>
+                            <a href="#" class="header-nav-link">Discount</a>
+                            <a href="#" class="header-nav-link">Reviews</a>
+                            <a href="#" class="header-nav-link">Contact</a>
+                        </div>
+                        <div class="phone-number">095 444 44 44</div>
+                        <div class="language-selector">
+                            <span>ENG</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Header Bottom Section -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-bottom-content">
+                    <div class="catalog-btn">
+                        <i class="fa-solid fa-grid"></i>
+                        <span>Catalog</span>
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search...">
+                        <button><i class="fa-solid fa-search"></i></button>
+                    </div>
+                    <div class="header-icons">
+                        <a href="#" class="header-icon">
+                            <i class="fa-solid fa-box"></i>
+                            <span class="icon-badge">4</span>
+                        </a>
+                        <a href="#" class="header-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </a>
+                        <a href="#" onclick="showMyPage()" class="header-icon user-account">
+                            <span class="user-name">Alexander</span>
+                            <span class="user-balance">Balance: 500$</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Homepage Content -->
+            <div id="homepage" class="homepage">
+                <!-- Banner -->
+                <section class="banner">
+                    <div class="banner-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1401&q=80" alt="电子产品促销活动">
+                        <div class="banner-text">
+                            <h2>新一代智能科技</h2>
+                            <p>探索全新的电子产品系列，提升您的数字生活体验</p>
+                            <a href="#" class="btn-primary">立即探索</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Categories Section -->
+                <section class="category-section">
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div class="category-title">手机</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-laptop"></i>
+                            </div>
+                            <div class="category-title">电脑</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-tablet-screen-button"></i>
+                            </div>
+                            <div class="category-title">平板电脑</div>
+                        </div>
+                        <div class="category-card">
+                            <div class="category-icon">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                            <div class="category-title">更多</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- New Arrivals with tags -->
+                <section class="product-section">
+                    <div class="section-header">
+                        <h2 class="section-title">新鲜好物</h2>
+                        <a href="#" class="view-all">查看全部 <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="智能手表">
+                                <div class="tag-container">
+                                    <span class="product-tag new">新品</span>
+                                    <span class="product-tag sale">热销</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">智能穿戴</div>
+                                <h3 class="product-title">全新智能手表 Pro</h3>
+                                <div class="product-price">¥1,999</div>
+                            </div>
+                        </div>
+                        <div class="product-card" onclick="showProductDetail()">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="无线耳机">
+                                <div class="tag-container">
+                                    <span class="product-tag new">新品</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">音频设备</div>
+                                <h3 class="product-title">高端无线降噪耳机</h3>
+                                <div class="product-price">¥899</div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1587033411391-5d9e51cce126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="智能音箱">
+                                <div class="tag-container">
+                                    <span class="product-tag sale">限时优惠</span>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">智能家居</div>
+                                <h3 class="product-title">AI智能音箱</h3>
+                                <div class="product-price">¥459</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Popular Recommendations with enhanced product cards -->
+                <section class="product-section">
+                    <div class="section-header">
+                        <h2 class="section-title">人气推荐</h2>
+                        <a href="#" class="view-all">查看全部 <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="product-grid">
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1384&q=80" alt="Galaxy Fit3 智能手环">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">Galaxy Fit3 智能手环</h3>
+                                <div class="shipping-note">已售出 400+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 498.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star-half-stroke"></i>
+                                        </div>
+                                        <span class="review-count">(20)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Apple Watch">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">Apple Watch Series 8 GPS</h3>
+                                <div class="shipping-note">已售出 1,200+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 399.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="review-count">(352)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=927&q=80" alt="Xiaomi手环">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">小米智能手环 7 Pro</h3>
+                                <div class="shipping-note">已售出 3,500+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 289.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <span class="review-count">(186)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Infinite Scroll Products -->
+                <section class="product-section">
+                    <div class="section-header">
+                        <h2 class="section-title">猜你喜欢</h2>
+                    </div>
+                    <div class="infinite-products">
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1546027658-7aa750153465?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="蓝牙耳机">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">AirPods Pro 2 无线降噪耳机</h3>
+                                <div class="shipping-note">已售出 5,200+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 249.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="review-count">(523)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1613742442310-db99d69a4018?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="智能手表">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">HUAWEI WATCH GT3 Pro</h3>
+                                <div class="shipping-note">已售出 2,100+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 359.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <span class="review-count">(278)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1623998021669-c69e7e33fbf3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="电子阅读器">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">Kindle Paperwhite 电子阅读器</h3>
+                                <div class="shipping-note">已售出 3,700+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 159.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="review-count">(472)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1600086827875-a63b09533cdf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="智能音箱">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">Google Nest Audio 智能音箱</h3>
+                                <div class="shipping-note">已售出 1,500+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 99.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star-half-stroke"></i>
+                                        </div>
+                                        <span class="review-count">(183)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1600003263720-95b45a4035d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="无线充电器">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">Samsung 快速无线充电板</h3>
+                                <div class="shipping-note">已售出 2,800+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 59.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <span class="review-count">(152)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="load-more">
+                        <button class="load-more-btn">加载更多</button>
+                    </div>
+                </section>
+            </div>
+
+            <!-- My Page Content -->
+            <div id="myPage" class="my-page">
+                <div class="my-page-header">
+                    <button class="back-button" onclick="showHomepage()">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <h2 class="section-title">我的账户</h2>
+                    <div></div><!-- Empty div for flex spacing -->
+                </div>
+
+                <!-- Profile Info -->
+                <section class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="用户头像">
+                    </div>
+                    <div class="profile-details">
+                        <h2>Alexander</h2>
+                        <p>普通会员</p>
+                    </div>
+                </section>
+
+                <!-- User Stats -->
+                <section class="stats-card">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">收藏</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">优惠券</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">足迹</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">积分</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Orders -->
+                <section class="orders-card">
+                    <div class="section-header">
+                        <h2 class="section-title">我的订单</h2>
+                        <a href="#" class="view-all">全部订单 <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="order-icons">
+                        <div class="order-icon">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <div class="order-label">待付款</div>
+                        </div>
+                        <div class="order-icon">
+                            <i class="fa-solid fa-box"></i>
+                            <div class="order-label">待发货</div>
+                        </div>
+                        <div class="order-icon">
+                            <i class="fa-solid fa-truck"></i>
+                            <div class="order-label">待收货</div>
+                        </div>
+                        <div class="order-icon">
+                            <i class="fa-solid fa-comment"></i>
+                            <div class="order-label">待评价</div>
+                        </div>
+                        <div class="order-icon">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <div class="order-label">售后</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Services -->
+                <section class="services-card">
+                    <div class="section-header">
+                        <h2 class="section-title">我的服务</h2>
+                    </div>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="service-label">收货地址</div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fa-solid fa-headset"></i>
+                            <div class="service-label">客服中心</div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <div class="service-label">帮助中心</div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fa-solid fa-shop"></i>
+                            <div class="service-label">我的门店</div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fa-solid fa-gift"></i>
+                            <div class="service-label">优惠券</div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fa-solid fa-star"></i>
+                            <div class="service-label">我的评价</div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <div class="service-label">浏览历史</div>
+                        </div>
+                        <div class="service-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="service-label">消息通知</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Logout Button -->
+                <section class="logout-section">
+                    <button class="btn-logout">退出登录</button>
+                </section>
+            </div>
+
+            <!-- Product Detail Page -->
+            <div id="productDetail" class="product-detail">
+                <div class="product-detail-header">
+                    <button class="product-detail-back" onclick="showHomepage()">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <div class="product-detail-title">商品详情</div>
+                    <div class="product-detail-share">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                </div>
+
+                <div class="product-detail-content">
+                    <!-- Product Gallery -->
+                    <div class="product-detail-gallery">
+                        <div class="product-detail-main-image">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="无线耳机主图" id="mainProductImage">
+                        </div>
+                        <div class="product-detail-thumbnails">
+                            <div class="product-thumbnail active" onclick="changeProductImage(this, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="无线耳机缩略图1">
+                            </div>
+                            <div class="product-thumbnail" onclick="changeProductImage(this, 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80')">
+                                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="无线耳机缩略图2">
+                            </div>
+                            <div class="product-thumbnail" onclick="changeProductImage(this, 'https://images.unsplash.com/photo-1578319439584-104c94d37305?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                                <img src="https://images.unsplash.com/photo-1578319439584-104c94d37305?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="无线耳机缩略图3">
+                            </div>
+                            <div class="product-thumbnail" onclick="changeProductImage(this, 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80')">
+                                <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="无线耳机缩略图4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Info -->
+                    <div class="product-detail-info">
+                        <h1 class="product-detail-name">高端无线降噪耳机 - 2023全新款</h1>
+                        <div class="product-detail-rating">
+                            <div class="product-detail-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="product-detail-reviews">4.5 (582条评价)</div>
+                        </div>
+
+                        <div class="product-detail-price-container">
+                            <div class="product-detail-price">¥899</div>
+                            <div class="product-detail-original-price">¥1,299</div>
+                            <div class="product-detail-discount">-30%</div>
+                        </div>
+
+                        <div class="product-detail-availability">
+                            <i class="fa-solid fa-check-circle"></i> 现货，24小时内发货
+                        </div>
+
+                        <div class="product-detail-description">
+                            这款高端无线降噪耳机采用最新音频技术，提供卓越的音质和舒适的佩戴体验。主动降噪功能可有效阻隔95%的环境噪音，让您专注于音乐或工作。内置的高性能电池可提供长达30小时的持续播放时间，快充10分钟即可使用3小时。
+                        </div>
+
+                        <div class="product-detail-colors">
+                            <div class="colors-label">颜色选择</div>
+                            <div class="colors-options">
+                                <div class="color-option color-black active"></div>
+                                <div class="color-option color-white"></div>
+                                <div class="color-option color-gray"></div>
+                                <div class="color-option color-blue"></div>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-quantity">
+                            <div class="quantity-label">数量</div>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="10" id="productQuantity">
+                                <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                            </div>
+                        </div>
+
+                        <div class="product-detail-actions">
+                            <button class="btn-add-to-cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                加入购物车
+                            </button>
+                            <button class="btn-buy-now">立即购买</button>
+                        </div>
+
+                        <div class="product-detail-features">
+                            <div class="features-title">产品特点</div>
+                            <ul class="features-list">
+                                <li>主动降噪技术，阻隔95%环境噪音</li>
+                                <li>高品质音频芯片，提供HiFi音质</li>
+                                <li>蓝牙5.2技术，稳定连接，低延迟</li>
+                                <li>触控操作，便捷控制音乐和通话</li>
+                                <li>IPX4防水设计，适合运动使用</li>
+                                <li>30小时超长续航，10分钟快充用3小时</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Tabs -->
+                <div class="product-detail-tabs">
+                    <div class="tabs-header">
+                        <div class="tab-btn active" onclick="switchTab(this, 'tabSpecifications')">规格参数</div>
+                        <div class="tab-btn" onclick="switchTab(this, 'tabReviews')">用户评价</div>
+                        <div class="tab-btn" onclick="switchTab(this, 'tabFaq')">常见问题</div>
+                    </div>
+
+                    <div id="tabSpecifications" class="tab-content active">
+                        <table class="specifications-table">
+                            <tr>
+                                <th>品牌</th>
+                                <td>COMFORT Audio</td>
+                            </tr>
+                            <tr>
+                                <th>型号</th>
+                                <td>CA-WH300</td>
+                            </tr>
+                            <tr>
+                                <th>颜色</th>
+                                <td>黑色/白色/灰色/蓝色</td>
+                            </tr>
+                            <tr>
+                                <th>连接方式</th>
+                                <td>蓝牙5.2</td>
+                            </tr>
+                            <tr>
+                                <th>电池容量</th>
+                                <td>500mAh</td>
+                            </tr>
+                            <tr>
+                                <th>续航时间</th>
+                                <td>开启降噪：约25小时 / 关闭降噪：约30小时</td>
+                            </tr>
+                            <tr>
+                                <th>充电时间</th>
+                                <td>约2小时</td>
+                            </tr>
+                            <tr>
+                                <th>快充</th>
+                                <td>10分钟充电可使用3小时</td>
+                            </tr>
+                            <tr>
+                                <th>重量</th>
+                                <td>280g</td>
+                            </tr>
+                            <tr>
+                                <th>包装内容</th>
+                                <td>耳机、Type-C充电线、3.5mm音频线、便携收纳盒、说明书</td>
+                            </tr>
+                            <tr>
+                                <th>保修期</th>
+                                <td>12个月</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="tabReviews" class="tab-content">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像">
+                                    </div>
+                                    <div>
+                                        <div class="reviewer-name">王先生</div>
+                                        <div class="review-date">2023-08-15</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                降噪效果非常好，戴上之后外界的噪音几乎完全听不到了。音质也不错，低音浑厚，高音清晰，中音饱满。电池续航也很给力，充一次可以用好几天。唯一的缺点可能是重量稍微有点大，长时间佩戴会有一点点压迫感，但是整体来说非常满意！
+                            </div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="用户头像">
+                                    </div>
+                                    <div>
+                                        <div class="reviewer-name">李女士</div>
+                                        <div class="review-date">2023-07-28</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                之前一直在使用有线耳机，这是第一次尝试无线降噪耳机，体验很不错。音质比我想象的要好，降噪效果在地铁和办公室环境下表现优秀。配对很方便，操作也简单直观。唯一不太满意的是耳罩的材质夏天戴有点热，希望后续版本能改进一下。总体来说是一次不错的购买体验。
+                            </div>
+                        </div>
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="用户头像">
+                                    </div>
+                                    <div>
+                                        <div class="reviewer-name">张先生</div>
+                                        <div class="review-date">2023-07-15</div>
+                                    </div>
+                                </div>
+                                <div class="review-stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="review-content">
+                                这款耳机整体性价比很高，音质对于这个价位来说已经很不错了。降噪效果在嘈杂环境中表现良好，但对于一些高频噪音效果一般。佩戴舒适度不错，可以长时间使用。电池续航确实如宣传所说，非常给力。希望厂家能够提供更多颜色选择。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tabFaq" class="tab-content">
+                        <div class="faq-item">
+                            <h3>Q: 这款耳机支持多设备连接吗？</h3>
+                            <p>A: 是的，支持最多同时连接两台设备，可以在手机和电脑之间无缝切换。</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Q: 耳机有防水功能吗？</h3>
+                            <p>A: 耳机具有IPX4级防水防汗功能，可以应对日常使用中的轻微淋雨和运动出汗，但不建议在游泳等水下环境中使用。</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Q: 耳机支持有线连接吗？</h3>
+                            <p>A: 是的，包装中附带了3.5mm音频线，当电池耗尽时，可以通过有线方式继续使用耳机。</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Q: 如何重置耳机？</h3>
+                            <p>A: 同时按住电源键和音量+键5秒，直到LED指示灯闪烁三次，即可重置耳机。</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Q: 是否支持APP控制？</h3>
+                            <p>A: 是的，可以下载我们的COMFORT Audio应用程序，通过APP可以调节均衡器、更新固件以及自定义触控功能。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommended Products -->
+                <section class="recommended-products">
+                    <div class="section-header">
+                        <h2 class="section-title">相关推荐</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1546027658-7aa750153465?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="蓝牙耳机">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">入耳式无线蓝牙耳机</h3>
+                                <div class="shipping-note">已售出 1,200+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 129.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <span class="review-count">(320)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="专业录音耳机">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">专业录音监听耳机</h3>
+                                <div class="shipping-note">已售出 880+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 299.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star-half-stroke"></i>
+                                        </div>
+                                        <span class="review-count">(156)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                        <div class="enhanced-product-card">
+                            <div class="enhanced-product-image">
+                                <img src="https://images.unsplash.com/photo-1606041011872-596597976b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80" alt="游戏耳机">
+                            </div>
+                            <div class="enhanced-product-info">
+                                <h3 class="enhanced-product-title">电竞游戏耳机</h3>
+                                <div class="shipping-note">已售出 1,800+</div>
+                                <div class="price-container">
+                                    <div class="enhanced-product-price">$ 189.00</div>
+                                    <div class="rating-container">
+                                        <div class="stars">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star-half-stroke"></i>
+                                        </div>
+                                        <span class="review-count">(342)</span>
+                                    </div>
+                                </div>
+                                <button class="add-to-cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    加入购物车
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>COMFORT</h3>
+                    <p>专注高品质电子产品，科技改变生活，为您带来更智能的生活体验。</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-link-column">
+                        <h4>购物指南</h4>
+                        <ul>
+                            <li><a href="#">注册登录</a></li>
+                            <li><a href="#">购物流程</a></li>
+                            <li><a href="#">会员介绍</a></li>
+                            <li><a href="#">常见问题</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-column">
+                        <h4>支付方式</h4>
+                        <ul>
+                            <li><a href="#">货到付款</a></li>
+                            <li><a href="#">在线支付</a></li>
+                            <li><a href="#">分期付款</a></li>
+                            <li><a href="#">优惠券使用</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-link-column">
+                        <h4>售后服务</h4>
+                        <ul>
+                            <li><a href="#">退换货政策</a></li>
+                            <li><a href="#">退款说明</a></li>
+                            <li><a href="#">维修/保养</a></li>
+                            <li><a href="#">投诉与建议</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系我们</h4>
+                    <p><i class="fa-solid fa-phone"></i> 400-123-4567</p>
+                    <p><i class="fa-solid fa-envelope"></i> support@comfort.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 上海市浦东新区科技园区88号</p>
+                    <div class="footer-qrcode">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://comfort.com" alt="COMFORT官方微信">
+                        <p>扫码关注我们</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2023 COMFORT 电子商城. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show different pages
+        function showHomepage() {
+            document.getElementById('homepage').style.display = 'block';
+            document.getElementById('myPage').style.display = 'none';
+            document.getElementById('productDetail').style.display = 'none';
+        }
+
+        function showMyPage() {
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('myPage').style.display = 'block';
+            document.getElementById('productDetail').style.display = 'none';
+        }
+
+        function showProductDetail() {
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('myPage').style.display = 'none';
+            document.getElementById('productDetail').style.display = 'block';
+        }
+
+        // Handle category selection
+        function selectCategory(element) {
+            // Remove active class from all categories
+            document.querySelectorAll('.category-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to clicked category
+            element.classList.add('active');
+        }
+
+        // Product detail page - change main product image
+        function changeProductImage(thumbnailElement, imageUrl) {
+            document.getElementById('mainProductImage').src = imageUrl;
+            
+            // Update active state for thumbnails
+            document.querySelectorAll('.product-thumbnail').forEach(thumbnail => {
+                thumbnail.classList.remove('active');
+            });
+            thumbnailElement.classList.add('active');
+        }
+
+        // Product detail page - quantity selector
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('productQuantity');
+            if (quantityInput.value > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('productQuantity');
+            if (quantityInput.value < 10) {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            }
+        }
+
+        // Product detail page - switch tabs
+        function switchTab(tabButton, tabContentId) {
+            // Remove active class from all tab buttons and content
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Add active class to selected tab button and content
+            tabButton.classList.add('active');
+            document.getElementById(tabContentId).classList.add('active');
+        }
+
+        // Banner slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const dots = document.querySelectorAll('.slide-dot');
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show current slide and activate corresponding dot
+            slides[index].style.display = 'block';
+            dots[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Auto advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+        
+        // Initialize first slide
+        showSlide(currentSlide);
+        
+        // Click handlers for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Toggle search bar visibility on mobile
+        const searchIcon = document.querySelector('.search-toggle');
+        const searchBar = document.querySelector('.search-bar');
+        
+        if (searchIcon) {
+            searchIcon.addEventListener('click', () => {
+                searchBar.classList.toggle('visible');
+            });
+        }
+
+        // Initialize page
+        showHomepage();
+
+        // Add event listeners for navigation
+        document.querySelector('.nav-item:nth-child(4)').addEventListener('click', showMyPage);
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', showProductDetail);
+        });
+    </script>
+</body>
+</html>
+
